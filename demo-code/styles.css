@@ -1,0 +1,18 @@
+h2 {
+    color: olivedrab;
+}
+.text-color{
+    color: blanchedalmond;
+}
+
+#text {
+    background-color: beige;
+}
+
+div[data-toggle="text"] {
+    background-color: blanchedalmond;
+}
+
+div:nth-child(1) {
+    color: aqua;
+}
