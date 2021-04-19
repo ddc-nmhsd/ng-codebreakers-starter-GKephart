@@ -1,0 +1,7 @@
+{
+  "/codebreaker": {
+    "target": "https://ddc-java.services/",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

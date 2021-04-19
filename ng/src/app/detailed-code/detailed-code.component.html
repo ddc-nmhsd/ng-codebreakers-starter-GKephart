@@ -1,0 +1,74 @@
+<main class="container">
+    <section class="row">
+        <div
+                class="col "
+        >
+            <h1 class="py-2 align-content-center">Detailed Card Info for Code: Id</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class=" card-title">Code Solved? false</h2>
+                    <p class="card-text">length: 5</p>
+                    <p class="card-text">pool: 5</p>
+                    <p class="card-text">solution:🤯😳😱🥺🤯</p>
+                    <h3 class="card-subtitle mb-2 text-muted">List of All Guesses</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            text: 🤯😳😱🥺🤯, Exact Matches: 5, Near
+                            Matches: 5
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div >
+                        <h3 class="card-subtitle mb-2 text-muted">Submit A Guess</h3>
+                        <form
+                                class="py-2"
+                                novalidate
+                        >
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <label class="sr-only" for="guess">Guess The Code</label>
+                                    <input class="form-control" formControlName="guess" id="guess" name="guess"
+                                           placeholder="guess the code" type="text">
+                                </div>
+                                <div
+                                        class="alert alert-danger"
+                                        role="alert"
+                                >
+                                    <span>a guess is required</span>
+                                    <span>
+                                    Guess is not long enough please add 0
+                                        more characters
+                                </span>
+                                    <span>
+                                    Guess is to long please remove 0 characters
+                                </span>
+                                </div>
+                            </div>
+                            <div class="text-md-right">
+                                <button  class="btn btn-primary" type="submit">post guess
+                                </button>
+                            </div>
+                        </form>
+                        <div>
+                            <div class="alert alert-dismissible alert-success"
+                                 role="alert">
+                                Successful solution for the code
+                            </div>
+                            <div class="alert alert-dismissible alert-danger"
+                                 role="alert">
+                                <button aria-label="Close" class="close"
+                                        type="button"><span
+                                        aria-hidden="true">&times;</span></button>
+                                Solution failed: text: 🤯😳😳🥺🤯, Exact Matches: 5, Near Matches: 5
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-muted">
+                        <h4>Code Solved</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,78 @@
+<main class="container">
+    <div class="row py-2">
+        <div class="col">
+            <h1>All The Codes</h1>
+        </div>
+    </div>
+    <section class="row py-2">
+        <div class="col">
+            <h2>Post Code Form</h2>
+            <form class="py-2" novalidate>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label class="sr-only" for="pool">Pool of Characters</label>
+                        <input class="form-control" formControlName="pool" id="pool" name="pool"
+                               placeholder="pool of characters" type="text">
+                    </div>
+                    <div
+                            class="alert alert-danger"
+                            role="alert"
+                    >
+                        <span>a pool of characters is required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label class="sr-only" for="pool">Length of Code</label>
+                        <input class="form-control" formControlName="length" id="length" name="pool"
+                               placeholder="length of code" type="number">
+                    </div>
+                    <div
+                            class="alert alert-danger"
+                            role="alert"
+                    >
+                        <span>a length for this code is required</span>
+                    </div>
+                </div>
+                <div class="text-md-right">
+                    <button class="btn btn-primary" type="submit">post code</button>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+    <section class="row py-2">
+        <div class="col">
+            <h2>All The Codes In a Table</h2>
+            <div class="table-responsive">
+
+
+                <table class="table table-bordered table-striped table-word-wrap">
+                    <tr>
+                        <th>Id</th>
+                        <th> Date Created</th>
+                        <th>Pool of Characters</th>
+                        <th>Length</th>
+                        <th>Guess Count</th>
+                        <th>Solved?</th>
+                        <th>Detailed Information</th>
+                    </tr>
+                    <tr >
+                        <td>code.id</td>
+                        <td> code.created</td>
+                        <td>🤯😳🥺🤯</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>False</td>
+                        <td>
+                            <button  class="btn btn-primary">
+                                <span>Detailed Information</span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
