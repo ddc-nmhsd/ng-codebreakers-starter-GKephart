@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+
 import {SplashComponent} from './splash/splash.component';
 import {CodesComponent} from './codes/codes.component';
 
@@ -18,5 +19,4 @@ export const allAppComponents = [SplashComponent, CodesComponent];
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

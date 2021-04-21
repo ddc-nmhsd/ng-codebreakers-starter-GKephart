@@ -35,7 +35,7 @@ export class CodeService {
 	 * @return Observable<Code[]> an observable that contains an array of all the codes returned from the server
 	 **/
 	public getAllCodes(): Observable<Code[]> {
-		return (this.http.get<Code[]>(this.codesUrlEndpoint))
+		return (this.http.get<Code[]>(this.codesUrlEndpoint));
 	}
 
 	/**

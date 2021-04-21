@@ -15,4 +15,28 @@ import {Router} from '@angular/router';
 /*
 * Main component for the codes view
  */
-export class CodesComponent {}
+export class CodesComponent implements OnInit {
+	/**
+	 * State variable containing all of the codes returned by the server
+	 * @var Codes[] codes and array containing all the code objects that exists on the server
+	 */
+	public codes: Code[] = [];
+
+	constructor(private codeService: CodeService) {
+
+	}
+
+	ngOnInit() {
+		this.setAllCodes()
+	}
+
+	/**
+	 * Simple mutator method that interacts with the code service to grab all the codes from the server and sets
+	 * them to the codes state variable
+	 */
+	setAllCodes(): void {
+		this.codeService.getAllCodes().subscribe(reply => {
+			this.codes = reply
+		});
+	}
+}
