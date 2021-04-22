@@ -22,8 +22,13 @@ export class CodesComponent implements OnInit {
 	 */
 	public codes: Code[] = [];
 
-	constructor(private codeService: CodeService) {
+	public codeForm: FormGroup;
 
+	constructor(private codeService: CodeService, private formBuilder: FormBuilder) {
+		this.codeForm = this.formBuilder.group({
+			pool: ["", [Validators.required]],
+			length: ["", [Validators.required, Validators.maxLength(20)]]
+		})
 	}
 
 	ngOnInit() {
@@ -38,5 +43,24 @@ export class CodesComponent implements OnInit {
 		this.codeService.getAllCodes().subscribe(reply => {
 			this.codes = reply
 		});
+	}
+
+	createCode(): void {
+
+		console.log(this.codeForm)
+		const code: Code = {
+			id: null,
+			created: null,
+			pool: this.codeForm.value.pool,
+			length: this.codeForm.value.length,
+			guessCount: null,
+			solved: null,
+			text: null
+		}
+
+		this.codeService.createCode(code).subscribe(response => {
+			this.codeForm.reset()
+			this.setAllCodes()
+		})
 	}
 }
