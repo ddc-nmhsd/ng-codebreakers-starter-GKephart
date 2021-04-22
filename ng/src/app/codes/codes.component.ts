@@ -24,7 +24,16 @@ export class CodesComponent implements OnInit {
 
 	public codeForm: FormGroup;
 
-	constructor(private codeService: CodeService, private formBuilder: FormBuilder) {
+	/**
+	 * constructor method for the codes component.The constructor is called when bootstrapping the component
+	 * and is called before ngOnInit. Values not related to the lifecycle of the component should be defined and set in
+	 * the constructor.
+	 * @param codeService HTTP service that interacts with the code endpoint on the server
+	 * @param formBuilder provided by angular for the creation of Reactive forms
+	 * @param router Router object that can navigate to other views and manipulate urls
+	 */
+
+	constructor(private codeService: CodeService, private formBuilder: FormBuilder, private router: Router) {
 		this.codeForm = this.formBuilder.group({
 			pool: ["", [Validators.required]],
 			length: ["", [Validators.required, Validators.maxLength(20)]]
@@ -61,6 +70,19 @@ export class CodesComponent implements OnInit {
 		this.codeService.createCode(code).subscribe(response => {
 			this.codeForm.reset()
 			this.setAllCodes()
+			this.navigateToDetailedView(code)
+		})
+	}
+	/**
+	 * Method for handling the redirect to the detailed-code view for a specific code when the user clicks the detailed
+	 * information button for a specific code
+	 * when an end user clicks on the detailed information
+	 *
+	 * @param code Code The code object that will be displayed in the detailed code view
+	 */
+	navigateToDetailedView(code: Code): void {
+		this.router.navigate(['/detailed-code/', code.id]).catch(error => {
+			console.error(error)
 		})
 	}
 }
