@@ -1,7 +1,7 @@
 # Ng Code Breakers Wrap up Assignment
 ## Getting Started
 A little more project setup is required before getting started. 
-1. A new detailed  component needs to be created and routed.
+1. A new component for a detailed information view needs to be created and routed.
     * [Code For The Component](https://github.com/ddc-nmhsd/ng-codebreakers-starter-GKephart/blob/42e22de478d73d98c96d5ea0940686fb6dc1ce23/ng/src/app/detailed-code/detailed-code.component.ts#L1-L17)
     * [Routing Setup](https://github.com/ddc-nmhsd/ng-codebreakers-starter-GKephart/blob/42e22de478d73d98c96d5ea0940686fb6dc1ce23/ng/src/app/app-routing.module.ts#L11)
 2. Slight code clean up on the detailed-code html
@@ -15,7 +15,7 @@ A little more project setup is required before getting started.
       * [Example click event binding](https://github.com/ddc-nmhsd/ng-codebreakers-starter-GKephart/blob/42e22de478d73d98c96d5ea0940686fb6dc1ce23/ng/src/app/codes/codes.component.html#L71-L73)
 ## Instructions 
 ### Overview
-* Now that you have had a walk through of How to wire a component it's time to enforce what you have learned through 
+* Now that you have had a walk through of how to wire a component, it's time to enforce what you have learned through 
 implementing a detailed view page for a specific code and creating a service for interacting with guesses on the server.
 ### Objectives 
 #### Create a Guesses Service in `/ng/src/app/shared/services/guess.service.ts`
