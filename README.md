@@ -36,7 +36,7 @@ implementing a detailed view page for a specific code and creating a service for
 ### Wire the submit a guess form to submit guesses to the server in the detailed-code view.
 * You will need to create the guess service before being able to complete this objective.
 * Form validation for this task is going to be difficult.
-   * Form validation will need to be set dynamically depending on the length of the code.
-   * I recommend using  two methods setValidators and updateValueAndValidity provided by the Reactive Forms 
+   * min and max length validation will need to be set dynamically depending on the length of the code returned by the server.
+   * I recommend using the two methods setValidators and updateValueAndValidity provided by the Reactive Form's library provided by Angular.
 ### Extra Credit: Display success and failure messages on submission of the form submit a guess form.
 * The post method for submitting a guess comes back with details about the previous guess, and the detailed code template has a place to display that info.
