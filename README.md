@@ -28,8 +28,8 @@ implementing a detailed view page for a specific code and creating a service for
 ### Wire the individual code to display in the detailed-code view
 * The code service already has a method for getting a code by id.
 * remember to implement the OnInit interface and the ngOnInit method.
-* the `*ngFor` structural directive used in the codes view will be required for this objective
-   * the codes view uses the `*ngFor directive`
+* the ~~*ngFor~~ `*ngIf` structural directive used in the codes view will be required for this objective
+   * the codes view uses the ~~*ngFor directive~~ `*ngIf` directive.
 ### Wire all the guesses for a code to display in the detailed-code view. 
 * You will need to create the guess service before being able to complete this objective
 * Remember to implement the OnInit interface and the ngOnInit method.
