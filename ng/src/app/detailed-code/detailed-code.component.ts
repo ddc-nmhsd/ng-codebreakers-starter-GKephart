@@ -37,6 +37,7 @@ export class DetailedCodeComponent implements OnInit{
 	setCodeByCodeId() : void {
 		this.codeService.getCodeByCodeId(this.codeId).subscribe(response => {
 			this.code = response;
+			this.updateFormValidation(response.length);
 		})
 	}
 
@@ -47,6 +48,7 @@ export class DetailedCodeComponent implements OnInit{
 	}
 
 	submitGuess() {
+		console.log(this.guessForm)
 		const guess: Guess = {
 			id: null,
 			created: null,
@@ -60,6 +62,14 @@ export class DetailedCodeComponent implements OnInit{
 			alert(reply.solution);
 		});
 	}
+	updateFormValidation(length: number): void {
+		const minLengthValidator = Validators.minLength(length);
+		const maxLengthValidator = Validators.maxLength(length);
+		this.guessForm.controls["guess"].setValidators([Validators.required, minLengthValidator, maxLengthValidator]);
+		this.guessForm.controls["guess"].updateValueAndValidity()
+	}
+
+
 
 
 }

@@ -38,19 +38,20 @@
                                 <div
                                         class="alert alert-danger"
                                         role="alert"
+                                        *ngIf="guessForm.controls.guess?.invalid && guessForm.controls.guess?.touched"
                                 >
-                                    <span>a guess is required</span>
-                                    <span>
-                                    Guess is not long enough please add 0
+                                    <span *ngIf="guessForm.controls.guess.errors?.required">a guess is required</span>
+                                    <span *ngIf="guessForm.controls.guess.errors?.minlength">
+                                    Guess is not long enough please add {{guessForm.controls.guess.errors?.minlength.requiredLength -guessForm.controls.guess.errors?.minlength.actualLength}}
                                         more characters
                                 </span>
-                                    <span>
-                                    Guess is to long please remove 0 characters
+                                    <span *ngIf="guessForm.controls.guess.errors?.maxlength">
+                                    Guess is to long please remove {{guessForm.controls.guess.errors?.maxlength.actualLength - guessForm.controls.guess.errors?.maxlength.requiredLength}} characters
                                 </span>
                                 </div>
                             </div>
                             <div class="text-md-right">
-                                <button  class="btn btn-primary" type="submit">post guess
+                                <button  [disabled]="!guessForm.valid" class="btn btn-primary" type="submit">post guess
                                 </button>
                             </div>
                         </form>
