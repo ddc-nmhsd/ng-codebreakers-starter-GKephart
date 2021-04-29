@@ -24,13 +24,15 @@
                     <div >
                         <h3 class="card-subtitle mb-2 text-muted">Submit A Guess</h3>
                         <form
+                                (submit)="submitGuess()"
+                                [formGroup]="guessForm"
                                 class="py-2"
                                 novalidate
                         >
                             <div class="form-group">
                                 <div class="input-group">
                                     <label class="sr-only" for="guess">Guess The Code</label>
-                                    <input class="form-control" id="guess" name="guess"
+                                    <input class="form-control" formControlName="guess" id="guess" name="guess"
                                            placeholder="guess the code" type="text">
                                 </div>
                                 <div
