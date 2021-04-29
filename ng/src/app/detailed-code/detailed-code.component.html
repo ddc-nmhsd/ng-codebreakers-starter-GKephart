@@ -24,6 +24,7 @@
                     <div >
                         <h3 class="card-subtitle mb-2 text-muted">Submit A Guess</h3>
                         <form
+                                *ngIf="code.solved === false"
                                 (submit)="submitGuess()"
                                 [formGroup]="guessForm"
                                 class="py-2"
@@ -55,22 +56,27 @@
                                 </button>
                             </div>
                         </form>
-                        <div>
+                        <div *ngIf="previousGuess !== null">
                             <div class="alert alert-dismissible alert-success"
-                                 role="alert">
+                                 role="alert"
+                                 *ngIf="previousGuess.solution === true"
+                            >
                                 Successful solution for the code
                             </div>
                             <div class="alert alert-dismissible alert-danger"
-                                 role="alert">
-                                <button aria-label="Close" class="close"
-                                        type="button"><span
-                                        aria-hidden="true">&times;</span></button>
-                                Solution failed: text: 🤯😳😳🥺🤯, Exact Matches: 5, Near Matches: 5
+                                 role="alert"
+                                 *ngIf="previousGuess.solution === false"
+                            >
+                                <button aria-label="Close"  (click)="previousGuess = null" class="close"
+                                        type="button">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                Solution failed: text {{previousGuess.text}}, Exact Matches: {{previousGuess.exactMatches}}, Near Matches: {{previousGuess.nearMatches}}
                             </div>
                         </div>
                     </div>
                     <div class="text-muted">
-                        <h4>Code Solved</h4>
+                        <h4 *ngIf="code.solved === true">Code Solved</h4>
                     </div>
                 </div>
             </div>

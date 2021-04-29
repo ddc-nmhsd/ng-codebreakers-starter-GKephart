@@ -20,6 +20,8 @@ export class DetailedCodeComponent implements OnInit{
 
 	public guessForm: FormGroup;
 
+	public previousGuess: null | Guess = null
+
 	constructor(private currentRoute: ActivatedRoute, private codeService: CodeService, private guessService: GuessService, private formBuilder: FormBuilder) {
 		// this.route.snapshot grabs pertinent url parameters of off the url on object instantiation.
 		// <string> asserts that what we get back from currentRoute.snapshot.paramMap.get('codeId') will be a string.
@@ -59,7 +61,11 @@ export class DetailedCodeComponent implements OnInit{
 		};
 
 		this.guessService.createGuess(this.codeId, guess).subscribe(reply => {
-			alert(reply.solution);
+			this.previousGuess = reply
+			this.setGuessesByCodeId(this.codeId);
+			if(reply.solution === true){
+				this.setCodeByCodeId()
+			}
 		});
 	}
 	updateFormValidation(length: number): void {
