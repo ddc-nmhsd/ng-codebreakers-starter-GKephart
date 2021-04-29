@@ -14,9 +14,9 @@
                     <p class="card-text" *ngIf="code.solved === true ">solution:{{code.text}}</p>
                     <h3 class="card-subtitle mb-2 text-muted">List of All Guesses</h3>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            text: 🤯😳😱🥺🤯, Exact Matches: 5, Near
-                            Matches: 5
+                        <li class="list-group-item" *ngFor="let guess of guesses">
+                            text: {{guess.text}}, Exact Matches: {{guess.exactMatches}}, Near
+                            Matches: {{guess.nearMatches}}
                         </li>
                     </ul>
                 </div>
