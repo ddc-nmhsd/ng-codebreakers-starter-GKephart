@@ -1,15 +1,17 @@
+
 <main class="container">
     <section class="row">
         <div
                 class="col "
+                *ngIf="code !== null"
         >
-            <h1 class="py-2 align-content-center">Detailed Card Info for Code: Id</h1>
+            <h1 class="py-2 align-content-center">Detailed Card Info for Code: {{code.id}}</h1>
             <div class="card">
                 <div class="card-body">
-                    <h2 class=" card-title">Code Solved? false</h2>
-                    <p class="card-text">length: 5</p>
-                    <p class="card-text">pool: 5</p>
-                    <p class="card-text">solution:🤯😳😱🥺🤯</p>
+                    <h2 class=" card-title">Code Solved? {{code.solved}}</h2>
+                    <p class="card-text">length: {{code.length}}</p>
+                    <p class="card-text">pool: {{code.pool}}</p>
+                    <p class="card-text" *ngIf="code.solved === true ">solution:{{code.text}}</p>
                     <h3 class="card-subtitle mb-2 text-muted">List of All Guesses</h3>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
